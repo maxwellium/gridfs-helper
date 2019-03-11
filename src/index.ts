@@ -6,7 +6,7 @@ import { GridFSBucket, GridFSBucketWriteStream, Db, ObjectID } from 'mongodb';
 export function streamToGridFS(
   db: Db,
   filename: string,
-  stream: Readable,
+  stream: Readable | NodeJS.ReadableStream,
   metadata?: any
 ): Promise<GridFSBucketWriteStream[ 'id' ]> {
 
